@@ -1,29 +1,27 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "dinakeri/filament-flatpickr",
+    "description": "This is my package filament-flatpickr",
     "keywords": [
-        ":vendor_name",
+        "Dinakeri",
         "laravel",
-        ":package_slug"
+        "filament-flatpickr"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/dinakeri/filament-flatpickr",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/dinakeri/filament-flatpickr/issues",
+        "source": "https://github.com/dinakeri/filament-flatpickr"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Dinakeri",
+            "email": "117737175+Dinakeri@users.noreply.github.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
@@ -41,13 +39,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Dinakeri\\FilamentFlatpickr\\": "src/",
+            "Dinakeri\\FilamentFlatpickr\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Dinakeri\\FilamentFlatpickr\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,10 +65,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Dinakeri\\FilamentFlatpickr\\FilamentFlatpickrServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentFlatpickr": "Dinakeri\\FilamentFlatpickr\\Facades\\FilamentFlatpickr"
             }
         }
     },

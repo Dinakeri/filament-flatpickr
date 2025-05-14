@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Dinakeri\FilamentFlatpickr\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentFlatpickrCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-flatpickr';
 
     public $description = 'My command';
 
