@@ -29,7 +29,6 @@ class FlatpickrDatePicker extends Field
         return $this->shouldDisableWeekends;
     }
 
-
     public function disableDays(array $days): static
     {
 
@@ -46,7 +45,6 @@ class FlatpickrDatePicker extends Field
     public function disableDates(array $dates): static
     {
         $this->disabledDates = $dates;
-
 
         return $this->extraAttributes(array_merge(
             $this->getExtraAttributes(),

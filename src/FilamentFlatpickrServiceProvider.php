@@ -61,49 +61,48 @@ class FilamentFlatpickrServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void {}
 
-public function packageBooted(): void
-{
-    // Asset Registration
-    FilamentAsset::register(
-        $this->getAssets(),
-        $this->getAssetPackageName()
-    );
+    public function packageBooted(): void
+    {
+        // Asset Registration
+        FilamentAsset::register(
+            $this->getAssets(),
+            $this->getAssetPackageName()
+        );
 
-    FilamentAsset::registerScriptData(
-        $this->getScriptData(),
-        $this->getAssetPackageName()
-    );
+        FilamentAsset::registerScriptData(
+            $this->getScriptData(),
+            $this->getAssetPackageName()
+        );
 
-    // Icon Registration
-    FilamentIcon::register($this->getIcons());
+        // Icon Registration
+        FilamentIcon::register($this->getIcons());
 
-    // Handle Stubs
-    if (app()->runningInConsole()) {
-        foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
-            $this->publishes([
-                $file->getRealPath() => base_path("stubs/filament-flatpickr/{$file->getFilename()}"),
-            ], 'filament-flatpickr-stubs');
+        // Handle Stubs
+        if (app()->runningInConsole()) {
+            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+                $this->publishes([
+                    $file->getRealPath() => base_path("stubs/filament-flatpickr/{$file->getFilename()}"),
+                ], 'filament-flatpickr-stubs');
+            }
         }
-    }
 
-    // Testing
-    Testable::mixin(new TestsFilamentFlatpickr);
+        // Testing
+        Testable::mixin(new TestsFilamentFlatpickr);
 
         // Filament::formComponents([
         //     \Dinakeri\FilamentFlatpickr\Forms\Components\FlatpickrDatePicker::class,
         // ]);
 
-    // Register the CSS and JS assets
+        // Register the CSS and JS assets
 
-    // FilamentAsset::register(
-    //     [
-    //         Css::make('filament-flatpickr-styles', __DIR__ . '/../resources/dist/filament-flatpickr.css'),
-    //         Js::make('filament-flatpickr-scripts', __DIR__ . '/../resources/dist/filament-flatpickr.js'),
-    //     ],
-    //     'dinakeri/filament-flatpickr'
-    // );
-}
-
+        // FilamentAsset::register(
+        //     [
+        //         Css::make('filament-flatpickr-styles', __DIR__ . '/../resources/dist/filament-flatpickr.css'),
+        //         Js::make('filament-flatpickr-scripts', __DIR__ . '/../resources/dist/filament-flatpickr.js'),
+        //     ],
+        //     'dinakeri/filament-flatpickr'
+        // );
+    }
 
     protected function getAssetPackageName(): ?string
     {
