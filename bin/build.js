@@ -45,6 +45,6 @@ const defaultOptions = {
 
 compile({
     ...defaultOptions,
-    entryPoints: ['./resources/js/index.js'],
+    entryPoints: ['./resources/js/filament-flatpickr.js'],
     outfile: './resources/dist/filament-flatpickr.js',
 })
