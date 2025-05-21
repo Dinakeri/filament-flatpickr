@@ -39,9 +39,7 @@ class FlatpickrDatePicker extends Field
 
         if ($this->defaultDate !== null) {
             $config['defaultDate'] = $this->defaultDate;
-        }
-        else
-        {
+        } else {
 
         }
 
