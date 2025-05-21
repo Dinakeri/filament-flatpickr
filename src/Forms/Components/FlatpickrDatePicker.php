@@ -53,6 +53,7 @@ class FlatpickrDatePicker extends Field
     public function disableWeekends(bool $condition = true): static
     {
         $this->shouldDisableWeekends = $condition;
+
         return $this;
     }
 
@@ -67,6 +68,7 @@ class FlatpickrDatePicker extends Field
             $this->getExtraAttributes(),
             ['data-disabled-days' => implode(',', $days)]
         ));
+
         return $this;
     }
 
@@ -75,6 +77,7 @@ class FlatpickrDatePicker extends Field
     public function disableDates(array $dates): static
     {
         $this->disabledDates = $dates;
+
         return $this->extraAttributes(array_merge(
             $this->getExtraAttributes(),
             ['data-disabled-dates' => json_encode($dates)]
@@ -89,48 +92,56 @@ class FlatpickrDatePicker extends Field
     public function weekNumbers(bool $condition = true): static
     {
         $this->shouldShowWeekNumbers = $condition;
+
         return $this;
     }
 
     public function enableTime(bool $condition = true): static
     {
         $this->shouldEnableTime = $condition;
+
         return $this;
     }
 
     public function time24hr(bool $condition = true): static
     {
         $this->shouldEnable24hrTime = $condition;
+
         return $this;
     }
 
     public function noCalendar(bool $condition = true): static
     {
         $this->shouldShowNoCalendar = $condition;
+
         return $this;
     }
 
     public function enableSeconds(bool $condition = true): static
     {
         $this->shouldEnableSeconds = $condition;
+
         return $this;
     }
 
     public function dateFormat(string $format): static
     {
         $this->flatpickrDateFormat = $format;
+
         return $this;
     }
 
     public function mode(string $mode): static
     {
         $this->flatpickrMode = $mode;
+
         return $this;
     }
 
     public function defaultDate($date): static
     {
         $this->defaultDate = $date;
+
         return $this;
     }
 }
