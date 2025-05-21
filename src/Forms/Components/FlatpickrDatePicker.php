@@ -20,7 +20,7 @@ class FlatpickrDatePicker extends Field
 
     protected $defaultDate = null;
 
-    protected string $flatpickrDateFormat = 'Y-m-d H:i:s';
+    protected string $flatpickrDateFormat = 'Y-m-d';
 
     protected string $flatpickrMode = 'single';
 
@@ -37,14 +37,13 @@ class FlatpickrDatePicker extends Field
         $config['enableSeconds'] = $this->shouldEnableSeconds;
         $config['mode'] = $this->flatpickrMode;
 
-            if ($this->defaultDate !== null) {
-        // Flatpickr converteert dit zelf, als het formaat klopt.
-        $config['defaultDate'] = $this->defaultDate;
-    } else {
-        // Anders gebruikt Flatpickr de 'value' attribute van de input field,
-        // wat Filament's $getState() is.
-        // Als je hier expliciet niets meegeeft, vertrouwt het op de input value.
-    }
+        if ($this->defaultDate !== null) {
+            $config['defaultDate'] = $this->defaultDate;
+        }
+        else
+        {
+
+        }
 
         return $config;
     }
